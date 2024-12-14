@@ -68,13 +68,13 @@ app.use('/api/crm/customers/:id', cacheMiddleware('customer'), createProxyMiddle
   }
 }));
 
-// inventory Routes
+// inventory routes
 app.use('/api/inventory', createProxyMiddleware({
   target: process.env.INVENTORY_SERVICE_URL,
   changeOrigin: true
 }));
 
-// support Routes
+// support routes
 app.use('/api/support', createProxyMiddleware({
   target: process.env.SUPPORT_SERVICE_URL,
   changeOrigin: true
