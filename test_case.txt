@@ -4,4 +4,27 @@
    "role": "Sales"
 }
 
+{
+   "name": "Sinclair",
+   "pass": "sinclair",
+   "role": "Admin"
+}
+
+{
+   "name": "Don",
+   "pass": "don",
+   "role": "Support"
+}
+
 this is the user test case(user as in employee who has access to this)
+
+data for testing
+
+customer
+
+{
+  "name": "Hiro",
+  "email": "hiro@tanaka.com",
+  "number": "00",
+  "address": "Tanaka St."
+}
