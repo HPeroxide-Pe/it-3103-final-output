@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT =  process.env.PORT || 3000;
 const dbHost = process.env.DB_HOST;
 const redisPort = process.env.REDIS_PORT;
 

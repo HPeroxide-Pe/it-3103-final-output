@@ -1,0 +1,7 @@
+{
+   "name": "Andre",
+   "pass": "andre",
+   "role": "Sales"
+}
+
+this is the user test case(user as in employee who has access to this)

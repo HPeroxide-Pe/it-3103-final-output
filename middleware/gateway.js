@@ -1,6 +1,7 @@
 //api gateway with redis integration
 
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config({ path: '../.env' });
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const rateLimit = require('express-rate-limit');
@@ -9,6 +10,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const client = redis.createClient();
+
 
 app.use(bodyParser.json());
 
