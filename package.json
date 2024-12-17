@@ -17,6 +17,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.0",
     "node-cron": "^3.0.3",
-    "redis": "^4.7.0"
+    "redis": "^4.7.0",
+    "winston": "^3.17.0"
   }
 }

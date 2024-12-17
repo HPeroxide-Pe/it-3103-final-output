@@ -28,3 +28,10 @@ customer
   "number": "00",
   "address": "Tanaka St."
 }
+
+tickets 
+
+{
+   "customerId": vv,
+   "description": "Broke Job Mountain",
+}
