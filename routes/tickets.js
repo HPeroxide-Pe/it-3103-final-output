@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const ticketsController = require('../controllers/ticketscontroller');
+const { authMiddleware, verifyRBAC } = require('../middleware/authRBAC.js');
 
-router.get('/:id', ticketsController.getTicketById);
-router.post('/', ticketsController.createTicket);
-router.put('/:id', ticketsController.updateTicket);
+router.get('/:id', authMiddleware, verifyRBAC(['Admin', 'Support']), ticketsController.getTicketById);
+router.post('/', authMiddleware, verifyRBAC(['Admin', 'Support']), ticketsController.createTicket);
+router.put('/:id', authMiddleware, verifyRBAC(['Admin', 'Support']), ticketsController.updateTicket);
 
 module.exports = router;
