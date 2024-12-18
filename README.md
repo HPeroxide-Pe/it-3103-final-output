@@ -26,6 +26,22 @@ node server.js
 
 ## Testing
 
+- How to get an authorization header?
+  - Method: POST
+  - URL: http://localhost:4000/api/auth/login
+  - Body: To register a user, add the "role" attribute. To log in, remove it.
+```
+{
+  "usename": "John Administrator"
+  "password": "it'sAdministr8ingTlme"
+  "email": "John@adminstration.com"
+  "role": "Admin" 
+}
+```
+- Role can either be "Admin", "Customer", "Sales", or "Support"
+
+- After the login, you will be given a JWT for the Authorization header.
+
 Using any API client, send any HTTP Request with these steps
 
 1. Customer 
@@ -109,6 +125,19 @@ Using any API client, send any HTTP Request with these steps
   - URL http://localhost:4000/api/orders/:id (replace :id with the order's ID in the database)
   - Auth: Add an authorization header with the Bearer prefix to the request
 3. Products
+- POST Request to add a Product
+  - Method: PUT
+  - URL http://localhost:4000/api/products/:id (replace :id with the Product's ID in the database)
+  - Auth: Add an authorization header with the Bearer prefix to the request
+  - Body: The body should be in JSON format  
+```
+{
+    "name": "Apple iPhone 13",
+    "price": 999.99,
+    "stock": 100,
+    "description": "The latest iPhone model among us."
+}
+```
 - GET Request to search for a Product by ID
   - Method: GET
   - URL http://localhost:4000/api/products/:id (replace :id with the Product's ID in the database)
