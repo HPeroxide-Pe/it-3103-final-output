@@ -1,8 +1,29 @@
 const Order = require('../models/orders');
+const Product = require('../models/product');
 
 exports.createOrder = async (req, res) => {
     try {
-        const newOrder = new Order(req.body);
+        const { customerId, products } = req.body;
+
+        if (!products || products.length === 0) {
+            return res.status(400).json({ message: 'Order must have at least one product' });
+        }
+
+        let totalAmount = 0;
+        for (let i = 0; i < products.length; i++) {
+            const product = await Product.findById(products[i].productId);
+            if (!product) {
+                return res.status(404).json({ message: `Product with ID ${products[i].productId} not found` });
+            }
+            totalAmount += product.price * products[i].quantity;
+        }
+
+        const newOrder = new Order({
+            customerId,
+            products,
+            totalAmount,
+        });
+
         const savedOrder = await newOrder.save();
         res.status(201).json(savedOrder);
     } catch (err) {

@@ -1,18 +1,21 @@
 {
-   "name": "Andre",
+   "username": "Andre",
    "pass": "andre",
+   "email": "andre@gmail.com",
    "role": "Sales"
 }
 
 {
-   "name": "Sinclair",
+   "username": "Sinclair",
    "pass": "sinclair",
+   "email": "sinclair@gmail.com",
    "role": "Admin"
 }
 
 {
-   "name": "Don",
+   "username": "Don",
    "pass": "don",
+   "email": "don@gmail.com",
    "role": "Support"
 }
 
@@ -34,4 +37,14 @@ tickets
 {
    "customerId": vv,
    "description": "Broke Job Mountain",
+}
+
+products
+
+{
+    "name": "Swedish meatballs",
+    "price": 10,
+    "stock": 30,
+    "description": "Not stolen from IKEA"
+
 }

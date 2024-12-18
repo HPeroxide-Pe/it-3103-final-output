@@ -25,3 +25,27 @@ exports.updateStock = async (req, res) => {
         res.status(500).send('Server error');
     }
 };
+
+exports.createProduct = async (req, res) => {
+    try {
+        const { name, description, price, stock } = req.body;
+
+        if (!name || !description || !price || !stock) {
+            return res.status(400).send('Please provide all required fields');
+        }
+
+        const newProduct = new Product({
+            name,
+            price,
+            stock,
+            description,
+        });
+
+        const savedProduct = await newProduct.save();
+
+        res.status(201).json(savedProduct);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+};

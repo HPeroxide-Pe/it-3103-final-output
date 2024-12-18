@@ -10,12 +10,14 @@ const redisPort = process.env.REDIS_PORT;
 
 // middleware
 app.use(bodyParser.json());
+app.use(express.json());
 
 // routes
 app.use('/customers', routeLog('Customer route accessed'), require('./routes/customers'));
 app.use('/api/tickets', routeLog('Ticket route accessed'), require('./routes/tickets'));
 app.use('/api/orders', routeLog('Order route accessed'), require('./routes/orders'));
 app.use('/api/products', routeLog('Product route accessed'), require('./routes/products'));
+app.use('/api/auth', routeLog('User route accessed'), require('./routes/auth'));
 
 // db connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })

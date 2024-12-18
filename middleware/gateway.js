@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const client = redis.createClient();
 
-
+app.use(express.json());
 app.use(bodyParser.json());
 
 client.on('connect', () => console.log('Connected to Redis'));
